@@ -24,9 +24,9 @@
     <meta name="x5-page-mode" content="app">
     <!--<link rel="apple-touch-icon" href=".png" />-->
     <!--<link rel="apple-touch-icon-precomposed" href=".png" />-->
-    <link rel="stylesheet" type="text/css" href="
-									style.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="manifest" href="manifest.json" />
+	<script type="module" src="https://cdn.jsdelivr.net/gh/khmyznikov/pwa-install@497d352feeabc9aa6c65a6f93133804b83321758/dist/pwa-install.bundle.js"></script>
   </head>
   <body>
     <div id="GameDiv" cc_exact_fit_screen="true">
@@ -45,6 +45,8 @@
 	}
   }
 </script>
+
+<pwa-install id="pwa-install" manifest-url="manifest.json"></pwa-install>
 	
 <!-- Polyfills bundle. -->
 <script src="src/polyfills.bundle.js" charset="utf-8"> </script>
