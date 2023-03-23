@@ -29,24 +29,23 @@
 	<script type="module" src="https://cdn.jsdelivr.net/gh/khmyznikov/pwa-install@497d352feeabc9aa6c65a6f93133804b83321758/dist/pwa-install.bundle.js"></script>
   </head>
   <body>
+	<script type="module">
+      if ("serviceWorker" in navigator) {
+        if (navigator.serviceWorker.controller) {
+          console.log("Active service worker found, no need to register");
+        } else {
+          navigator.serviceWorker.register('service-worker.js').then(function(reg) {
+            console.log("Service worker registered");
+          });
+        }
+      }
+    </script>
+	<pwa-install id="pwa-install" manual-apple="true" manual-chrome="true" manifest-url="manifest.json"></pwa-install>
     <div id="GameDiv" cc_exact_fit_screen="true">
       <div id="Cocos3dGameContainer">
         <canvas id="GameCanvas" oncontextmenu="event.preventDefault()" tabindex="99"></canvas>
       </div>
     </div>
-<script type="module">
-  if ("serviceWorker" in navigator) {
-	if (navigator.serviceWorker.controller) {
-	  console.log("Active service worker found, no need to register");
-	} else {
-	  navigator.serviceWorker.register('service-worker.js').then(function(reg) {
-		console.log("Service worker registered");
-	  });
-	}
-  }
-</script>
-
-<pwa-install id="pwa-install" manifest-url="manifest.json"></pwa-install>
 	
 <!-- Polyfills bundle. -->
 <script src="src/polyfills.bundle.js" charset="utf-8"> </script>
