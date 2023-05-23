@@ -48,8 +48,6 @@ self.addEventListener('fetch', function (event) {
 			networkFirst(event);
 		}
 		else {
-			console.log(event.request.url);
-			console.log(destination);
 			networkOnly(event);
 		}
 	}
